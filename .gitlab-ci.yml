@@ -17,6 +17,7 @@ build-image:
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 
 release-image:
+  image: registry.gitlab.werkspot.com/infrastructure/docker-images/builder/master:latest
   stage: release
   script:
     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
